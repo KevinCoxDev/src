@@ -18,6 +18,7 @@ public class Player{
 	}
 	
 	/**
+	 * gets player ID
 	 * @return specific player ID
 	 */
 	public int getPlayerID(){
@@ -25,18 +26,21 @@ public class Player{
 	}
 	
 	/**
+	 * gets current player name
 	 * @return specific player name
 	 */
 	public String getPlayerName(){
 		return playerName;
 	}
 	/**
+	 * gets current board position
 	 * @return players position on the board
 	 */
 	public int getBoardPosition(){
 		return boardPosition;
 	}
 	/**
+	 * gets players balance
 	 * @return players balance
 	 */
 	public int seeBalance(){

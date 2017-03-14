@@ -11,13 +11,14 @@ public class GoToJail extends Segment{
 		super(pos, nme);
 	}
 	/**
-	 * @param player which player is it
+	 * @param player when current player lands on jail
 	 */
 	public void land(Player player){
 		jailed(player);
 	}
 	/**
-	 * @param player puts player in jail
+	 * @param player current player
+	 * sends player to jail - board position 10
 	 */
 	public void jailed(Player player){
 		player.setBoardPosition(10);

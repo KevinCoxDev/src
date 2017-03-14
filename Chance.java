@@ -2,17 +2,31 @@ import java.util.Random;
 
 public class Chance extends Segment{
 	
+	/**
+	 * Constructor
+	 * @param nme name of player
+	 * @param pos position of player
+	 */
 	public Chance(String nme, int pos ){
 		super(pos, nme);
 	}
-	
+
+	/**
+	 * @param player current player
+	 * if current player lands on chance
+	 */
 	public void land(Player player){
 		getChance(player);
 	}
 	
+	/**
+	 * @param player current player
+	 * if player lands on chance, a card is randomly picked between 1 and 13
+	 * and they must abide by the card rules
+	 */
 	Random rand = new Random();
 	public void getChance(Player player){
-			int card = 2;//1+rand.nextInt(13);
+			int card = 1+rand.nextInt(11);
 			if (card == 1){
 				System.out.println("Advance to Go! - Collect 200!");
 				player.balance.addBalance(200);
@@ -51,8 +65,9 @@ public class Chance extends Segment{
 				}
 			}
 			if (card == 5){
-				System.out.println("Get Out of Jail Free!");
-				//Make get out of jail free card
+				System.out.println("Bank pays you dividend of 50");
+				//add 50 to bank balance
+				player.balance.addBalance(50);
 			}
 			if (card == 6){
 				System.out.println("Go to Jail!");
@@ -88,11 +103,7 @@ public class Chance extends Segment{
 				//add 100 to bank balance
 				player.balance.addBalance(100);
 			}
-			if (card == 13){
-				System.out.println("Bank pays you dividend of 50");
-				//add 50 to bank balance
-				player.balance.addBalance(50);
-			}
+
 	}
 	
 	}

@@ -1,21 +1,31 @@
 import java.util.Random;
 public class CommunityChest extends Segment{
 	
-	
+	/**
+	 * Constructor
+	 * @param nme name of player
+	 * @param pos position of player
+	 */
 	public CommunityChest(String nme, int pos ){
 		super(pos, nme);
 	}
 	
-	
+	/**
+	 * @param player current player
+	 * if player lands on a community chest
+	 */
 	public void land(Player player){
-		//getCommunity(player);
 		getCommunity(player);
 	}
 	
-	
+	/**
+	 * @param player current player
+	 * if player lands on a community chest, a card is randomly picked from 1 to 12
+	 * player must abide by the card rules
+	 */
 	Random rand = new Random();
 	public void getCommunity(Player player){
-		int card = 1 +rand.nextInt(13);
+		int card = 1 +rand.nextInt(11);
 		if (card == 1){
 			System.out.println("Advance to Go! - Collect 200!");
 			//Add 200 to bank balance
@@ -33,13 +43,13 @@ public class CommunityChest extends Segment{
 		}
 		else if (card == 4){
 			System.out.println("Sale of Stock - Collect 50!");
-			//Add 200 to bank balance
-			player.balance.addBalance(200);
+			//Add 50 to bank balance
+			player.balance.addBalance(50);
 		}
 		else if (card == 5){
-			System.out.println("Get Out of Jail Free!");
-			//Make get out of jail free card
-			//Must do
+			System.out.println("You Have Won Second Prize in a Beauty Contest - Collect 10!");
+			//add 10 to bank balance
+			player.balance.addBalance(10);
 		}
 		else if (card == 6){
 			System.out.println("Go to Jail!");
@@ -76,26 +86,7 @@ public class CommunityChest extends Segment{
 			//add 25 to bank balance
 			player.balance.addBalance(25);
 		}
-		else if (card == 13){
-			System.out.println("You Have Won Second Prize in a Beauty Contest - Collect 10!");
-			//add 10 to bank balance
-			player.balance.addBalance(10);
-		}
 		
 		System.out.println("CC " + player.getPlayerName() + " " +player.balance.getBalance());
 }
 }
-
-//1.Advance to Go (Collect $200)/
-//2Bank error in your favor – Collect $200
-//3Doctor's fees {fee} – Pay $50 
-//4From sale of stock you get $50
-//5Get Out of Jail Free
-//6Go to Jail
-//7Holiday {Xmas} Fund matures - Receive {Collect} $100 
-//8Income tax refund – Collect $20
-//9Life insurance matures – Collect $100
-//10Pay hospital fees of $100
-//11Pay school fees {tax} of $150 
-//12Receive $25 consultancy fee
-//13You have won second prize in a beauty contest – Collect $10 
